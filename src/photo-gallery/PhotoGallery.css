@@ -1,0 +1,35 @@
+.demo3 {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+.demo3-inner {
+  /* overflow: hidden; */
+  position: relative;
+  margin: auto;
+}
+.demo3-photo {
+  position: absolute;
+  background-color: lightgray;
+}
+
+.demo4 {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  position: relative;
+}
+.demo4-inner {
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+}
+.demo4-photo {
+  position: absolute;
+  background-color: lightgray;
+}
