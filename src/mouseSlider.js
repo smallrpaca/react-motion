@@ -1,35 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 const MouseSlider = ({ children }) => {
-  const [isDown, setIsDown] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-
   useEffect(() => {
     const slider = document.querySelector(".MouseSlider");
+    let isDown;
+    let startX;
+    let scrollLeft;
+
     slider.addEventListener("mousedown", e => {
-      setIsDown(true);
-      setStartX(e.pageX - slider.offsetLeft);
-      setScrollLeft(slider.scrollLeft);
+      isDown = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
     });
-  }, []);
 
-  useEffect(() => {
-    const slider = document.querySelector(".MouseSlider");
     slider.addEventListener("mouseleave", () => {
-      setIsDown(false);
+      isDown = false;
     });
-  }, []);
 
-  useEffect(() => {
-    const slider = document.querySelector(".MouseSlider");
     slider.addEventListener("mouseup", () => {
-      setIsDown(false);
+      isDown = false;
     });
-  }, []);
 
-  useEffect(() => {
-    const slider = document.querySelector(".MouseSlider");
     slider.addEventListener("mousemove", e => {
       if (!isDown) return;
       e.preventDefault();
@@ -38,6 +29,7 @@ const MouseSlider = ({ children }) => {
       slider.scrollLeft = scrollLeft - walk;
     });
   }, []);
+
   return (
     <div
       className="MouseSlider"
