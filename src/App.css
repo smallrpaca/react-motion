@@ -2,3 +2,15 @@ body {
   margin: 0;
   background: #fbfbfb;
 }
+
+div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+  top: 0;
+  border-left: 2px solid white;
+  color: white;
+  text-align: center;
+  line-height: 300px;
+}
